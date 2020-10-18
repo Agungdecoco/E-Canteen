@@ -1,5 +1,5 @@
 <?php
-class register{
+class signup{
 	protected $Name;
 	protected $User;
 	protected $Email;
@@ -35,6 +35,6 @@ $User = "aliya01";
 $Email = "ali@gmail.com";
 $Password = "aliya123";
 
-$register = new register($Name, $User, $Email, $Password);
-$register->save();
+$signup = new signup($Name, $User, $Email, $Password);
+$signup->save();
 ?>
