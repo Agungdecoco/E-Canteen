@@ -1,5 +1,5 @@
 <?php
-class newsignup{
+class daftar{
 	protected $Name;
 	protected $User;
 	protected $Email;
@@ -35,6 +35,6 @@ $User = "aliya01";
 $Email = "ali@gmail.com";
 $Password = "aliya123";
 
-$newsignup = new newsignup($Name, $User, $Email, $Password);
-$newsignup->save();
+$daftar = new daftar($Name, $User, $Email, $Password);
+$daftar->save();
 ?>
