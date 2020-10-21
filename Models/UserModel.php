@@ -1,4 +1,7 @@
 <?php
+  // editor: Subhan Nooriansyah
+  // email: subhan.nooriansyah@gmail.com
+  
   abstract class User {
       
       public $arrayUserId = array(); 
