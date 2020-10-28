@@ -1,2 +1,16 @@
 # E-Canteen
-Ini adalah project mata kuliah OOP dari kelompok 2 :))
+
+# Anggota
+(Agung)
+(Harun)
+(Amalia)
+(Ofi)
+(Frina)
+
+# Main Fiture
+Login (Customer & Seller)
+Registration (Customer)
+Order (Customer)
+Payment (Customer)
+
+# Tasks
