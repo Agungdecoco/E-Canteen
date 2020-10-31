@@ -5,7 +5,7 @@ class Product
 
     public $productArray = array(
         "Item1" => array(
-            'code' => '00001'
+            'code' => '00001',
             'name' => 'Nasi Goreng',
             'image' => '',
             'price' => '10000'
@@ -24,8 +24,7 @@ class Product
         )
     );
 
-    public function getAllProduct()
-    {
+    public function getAllProduct() {
         return $this->productArray;
     }
 }
