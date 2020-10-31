@@ -1,23 +1,23 @@
 <?php
-  // editor: Subhan Nooriansyah
-  // email: subhan.nooriansyah@gmail.com
-  
   declare(strict_types=1);
 
   $path = dirname(__DIR__, 1);
-  $path .= '/Models/UserModel.php';
+  $path = 'UserModel.php';
   require_once $path;
 
   class Customer extends User {
 
-    public $userLevel="";
+    public $customerId="";
+    public $customerEmail="";
 
-    public function setUserLevel($level) {
-        $this->userLevel = $level;
+    public function setUserLevel($email, $id) {
+        $this->$customerId = $id;
+        $this->$customerEmail = $email;
     }
-    
+
     public function getUserLevel() {
-        return $this->userLevel;
+        return $this->$customerId;
+        return $this->$customerEmail;
     }
   }
 ?>

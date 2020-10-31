@@ -1,12 +1,12 @@
 <?php
   // editor: Subhan Nooriansyah
   // email: subhan.nooriansyah@gmail.com
-  
-  abstract class User {
-      
-      public $arrayUserId = array(); 
 
-      abstract public function setUserLevel($level);
+  abstract class User {
+
+      public $arrayUserId = array();
+
+      abstract public function setUserLevel($email, $id);
       abstract public function getUserLevel();
 
       public function printUserLevel() {
