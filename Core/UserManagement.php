@@ -10,10 +10,13 @@
   require_once $path;
 
   $customer = new Customer();
-  $customer->setUserLevel("customer");
-  $customer->printUserLevel();
+  $customer->setUserName("Agung");
+  $customer->printUserName();
+  $customer->setUserEmail("agung@gmail.com");
+  $customer->printUserEmail();
+  $customer->setUserNum("089676193787");
+  $customer->printUserNum();
 
-  print_r($customer->genUserId());
 
   print_r($customer->genUserId());
 
