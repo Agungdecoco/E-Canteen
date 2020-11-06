@@ -1,16 +1,22 @@
 <?php
   // editor: Subhan Nooriansyah
   // email: subhan.nooriansyah@gmail.com
-  
+
   abstract class User {
-      
-      public $arrayUserId = array(); 
 
-      abstract public function setUserLevel($level);
-      abstract public function getUserLevel();
+      public $arrayUserId = array();
 
-      public function printUserLevel() {
-        print($this->getUserLevel()."\n");
+      abstract public function setUserName($name);
+      abstract public function getUserName();
+      abstract public function setUserEmail($email);
+      abstract public function getUserEmail();
+      abstract public function setUserNum($number);
+      abstract public function getUserNum();
+
+      public function printUser() {
+        print($this->getUserName()."\n");
+        print($this->getUserEmail()."\n");
+        print($this->getUserNum()."\n");
       }
 
       public function genUserId() {
@@ -20,7 +26,7 @@
         $userId = 0;
 
         for ($index=1; $index <= $maxValue; $index++) {
-          $suffix = $index;
+          $suffix =  $index;
           $userId = $prefix.sprintf("%04s",$suffix);
           $this->arrayUserId[$index] = $userId;
         }
