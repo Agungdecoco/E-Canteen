@@ -3,7 +3,7 @@ require __DIR__ . "/ConfigDB.php";
 
 abstract class MySQL
 {
-	use configDB;
+	use configuration;
 
 	private $conn;
 	public $status = false;
