@@ -13,8 +13,8 @@ class addItem implements Cart
 	public function action($dbcontrol)
 	{
 		if(!empty($_POST["quantity"])) {
-			$productByCode = $dbcontrol->runQuery("SELECT * FROM product WHERE code='" . $_GET["code"] . "'");
-			$itemArray = array($productByCode[0]["code"]=>array('name'=>$productByCode[0]["name"], 'code'=>$productByCode[0]["code"], 'quantity'=>$_POST["quantity"], 'image'=>$productByCode[0]["image"], 'price'=>$productByCode[0]["price"]));
+			$productByCode = $dbcontrol->runQuery("SELECT * FROM product WHERE id='" . $_GET["code"] . "'");
+			$itemArray = array($productByCode[0]["code"]=>array('name'=>$productByCode[0]["id"], 'code'=>$productByCode[0]["product"], 'quantity'=>$_POST["quantity"], 'image'=>$productByCode[0]["image"], 'price'=>$productByCode[0]["price"]));
 
 			if(!empty($_SESSION["cart_item"])) {
 				if(in_array($productByCode[0]["code"],array_keys($_SESSION["cart_item"]))) {
