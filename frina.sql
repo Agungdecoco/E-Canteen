@@ -43,4 +43,5 @@ CREATE TABLE `user` (
   `name` varchar(200) NOT NULL,
   `password` varchar(30) NOT NULL,
   `telephone` varchar(100) NOT NULL
+  INDEX(email)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;;
