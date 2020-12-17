@@ -3,7 +3,7 @@
 class Menu {
 	
 	private $id;
-	private $NamaBarang;
+	private $namabarang;
 	Private $harga;
 
 public function getId()
@@ -12,7 +12,7 @@ public function getId()
 }
 public function getNamabarang()
 {
-	return $this->NamaBarang;
+	return $this->namabarang;
 }
 public function getHarga()
 {
@@ -22,9 +22,9 @@ public function setId($id)
 {
 	$this->id = $id;
 }
-public function setNamabarang($NamaBarang)
+public function setNamabarang($namabarang)
 {
-	$this->NamaBarang = $NamaBarang;
+	$this->namabarang = $namabarang;
 }
 public function setHarga($harga)
 {
