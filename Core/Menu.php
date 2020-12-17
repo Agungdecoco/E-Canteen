@@ -22,13 +22,13 @@ public function setId($id)
 {
 	$this->id = $id;
 }
-public function setNamabarang()
+public function setNamabarang($NamaBarang)
 {
 	$this->NamaBarang = $NamaBarang;
 }
-public function setHarga()
+public function setHarga($harga)
 {
-	$this->harga = harga;
+	$this->harga = $harga;
 }
 }
 ?>
