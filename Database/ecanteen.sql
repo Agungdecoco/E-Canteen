@@ -20,7 +20,7 @@ CREATE TABLE `product` (
 -- Table structure for account
 DROP TABLE IF EXISTS `users`;	
 CREATE TABLE `users` (
-  	`idacc`			INT 			NOT NULL AUTO_INCREMENT PRIMARY KEY,	
+  	`iduser`			INT 			NOT NULL AUTO_INCREMENT PRIMARY KEY,	
 	`name`			VARCHAR(255) 	COLLATE utf8mb4_general_ci NOT NULL,
 	`email`			VARCHAR(255)	COLLATE utf8mb4_general_ci NOT NULL,
 	`password`		VARCHAR(20) 	COLLATE utf8mb4_general_ci NOT NULL,
