@@ -1,11 +1,13 @@
 <?php
-abstract class database
+require __DIR__ . "/ConfigDB.php";
+
+abstract class MySQL
 {
-	private $host = 'localhost';
-	private $user = 'root';
-	private $password = '';
-	private $database = 'ecanteen';
+	use configuration;
+
 	private $conn;
+	public $status = false;
+	public $errorMassage = null;
 
 	function __construct() {
 		$this->conn = $this->connectDB();
@@ -13,29 +15,30 @@ abstract class database
 
 	function connectDB() {
 		$conn = mysqli_connect($this->host,$this->user,$this->password,$this->database);
-		return $conn;
+	}
+
+	function checkConnection() {
+		if ($this->conn->connect_error) {
+					 $this->status = false;
+					 $this->errorMessage = $this->connection->connect_error;
+			 } else {
+					 $this->status = true;
+			 }
 	}
 
 	abstract public function runQuery($query);
-	abstract public function runRows($query);
 }
 
-
-class DBController extends database {
+class DBController extends MySQL {
 
 	public function runQuery($query) {
 		$result = mysqli_query($this->conn,$query);
 		while($row=mysqli_fetch_assoc($result)) {
-			$resultset[] = $row;
+			$rows[] = $row;
 		}
-		if(!empty($resultset))
-			return $resultset;
+		if(!empty($rows))
+			return $rows;
 	}
 
-	public function runRows($query) {
-		$result  = mysqli_query($this->conn,$query);
-		$rowcount = mysqli_num_rows($result);
-		return $rowcount;
-	}
 }
 ?>

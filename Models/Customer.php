@@ -7,33 +7,23 @@
 
   class Customer extends User {
 
-    public $customerName="";
-    public $customerEmail="";
-    public $customerNum="";
+    public $username=;
+    public $password=;
 
-
-    public function setUserName($name) {
-        $this->$customerName = $name;
+    public function setUserName($username) {
+        $this->username = $username;
     }
 
-  public function setUserEmail($email) {
-        $this->$customerEmail = $email;
-    }
-
-    public function setUserName($number) {
-        $this->$customerNum = $number;
+  public function setPassword($password) {
+        $this->password = $password;
     }
 
     public function getUserName() {
-        return $this->$customerName;
+        return $this->username;
     }
 
-    public function getUserEmail() {
-        return $this->$customerEmail;
-    }
-
-    public function getUserNum() {
-        return $this->$customerNum;
+    public function getPassword() {
+        return $this->password;
     }
   }
 ?>
