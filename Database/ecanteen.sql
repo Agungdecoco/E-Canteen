@@ -18,8 +18,8 @@ CREATE TABLE `product` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Table structure for account
-DROP TABLE IF EXISTS `account`;	
-CREATE TABLE `account` (
+DROP TABLE IF EXISTS `users`;	
+CREATE TABLE `users` (
   	`idacc`			INT 			NOT NULL AUTO_INCREMENT PRIMARY KEY,	
 	`iduser`		INT 			NOT NULL,
 	`name`			VARCHAR(255) 	COLLATE utf8mb4_general_ci NOT NULL,
@@ -27,7 +27,7 @@ CREATE TABLE `account` (
 	`telephone`		VARCHAR(13)		NOT NULL,
 	`age`			INT				NULL,
 	INDEX (`iduser`),
-	CONSTRAINT `account_iduser_fk` FOREIGN KEY (`iduser`) REFERENCES `useracc`(`iduser`) ON DELETE CASCADE ON UPDATE CASCADE
+	CONSTRAINT `account_iduser_fk` FOREIGN KEY (`iduser`) REFERENCES `account`(`iduser`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Table structure for seller
@@ -38,12 +38,12 @@ CREATE TABLE `seller` (
 	`seller`		VARCHAR(255) 	COLLATE utf8mb4_general_ci NOT NULL,
 	`canteen`		VARCHAR(255)	NULL,
 	INDEX (`iduser`),
-	CONSTRAINT `seller_iduser_fk` FOREIGN KEY (`iduser`) REFERENCES `useracc`(`iduser`) ON DELETE CASCADE ON UPDATE CASCADE
+	CONSTRAINT `seller_iduser_fk` FOREIGN KEY (`iduser`) REFERENCES `account`(`iduser`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Table structure for useracc
-DROP TABLE IF EXISTS `useracc`;	
-CREATE TABLE `useracc` (
+DROP TABLE IF EXISTS `account`;	
+CREATE TABLE `account` (
   	`iduser`		INT 			NOT NULL AUTO_INCREMENT PRIMARY KEY,	
 	`username`		VARCHAR(10) 	COLLATE utf8mb4_general_ci NOT NULL,
 	`password`		VARCHAR(20) 	COLLATE utf8mb4_general_ci NOT NULL,
