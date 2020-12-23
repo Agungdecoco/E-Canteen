@@ -5,9 +5,10 @@ interface signupInterface{
 }
 class signup implements signupInterface{
 	protected $Name;
-	protected $User;
+	protected $Username;
 	protected $Email;
 	protected $Password;
+	protected $Telephone;
 	private $EmailhasReady = "aliya@gmail.com";
 
 	public function __construct($Name, $User, $Email, $Password){
