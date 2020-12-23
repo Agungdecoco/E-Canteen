@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__ . "/../Core/dbcontroller.php";
+require __DIR__ . "/Core/MySQL.php";
 
 class query extends MySQL{
 
