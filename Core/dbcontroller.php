@@ -1,5 +1,5 @@
 <?php
-require __DIR__ . "/ConfigDB.php";
+require __DIR__ . "/ConfigurasiDatabase.php";
 
 abstract class MySQL
 {
