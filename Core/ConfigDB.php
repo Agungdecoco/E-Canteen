@@ -1,6 +1,6 @@
 <?php
 
-trait configDB
+trait ConfigDB
 {
 	private $host = 'localhost';
 	private $user = 'root';
