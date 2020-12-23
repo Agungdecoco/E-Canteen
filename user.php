@@ -2,9 +2,8 @@
 
 require __DIR__ . "/../Core/dbcontroller.php";
 
-<<<<<<< HEAD
 class User extends dbcontroller {
-    public static insert($user)
+    public static function insert ($user)
     {
         $stmt = $this->connection -> prepare("INSERT INTO'user'('email','name','password') VALUES (?,?,?)");
 
@@ -40,7 +39,6 @@ require __DIR__ . "/../Models/UserModel.php";
         } else {
             print_r("Gagal.\n");
         } 
-=======
 
 class user extends dbcontroller {
 	public static function search($email) {
@@ -55,4 +53,5 @@ class user extends dbcontroller {
 }
 $email = 'nanadiaw@yuhuu.com';
 var_dump(user::search($email));
->>>>>>> ff2d57b9128bb6fe212dbbfcae92c8d32033bba8
+ff2d57b9128bb6fe212dbbfcae92c8d32033bba8
+?>
