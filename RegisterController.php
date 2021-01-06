@@ -7,20 +7,23 @@ abstract class RegisterController extends query{
 	protected $name;
 	protected $email;
 	protected $password;
+	protected $telephone;
 	protected $confirm_password;
 	public $message;
 
-	public function getData($name, $email, $password, $confirm_password){
+	public function getData($name, $email, $password, $telephone, $confirm_password){
 		$this->name = $name;
 		$this->email = $email;
 		$this->password = $password;
+		$this->telephone = $telephone;
 		$this->confirm_password = $confirm_password;
+		
 
 		return $this->validateData();
 	}
 
 	public function validateData(){
-		if(empty($this->name) || empty($this->email) || empty($this->password) || empty($this->confirm_password)){
+		if(empty($this->name) || empty($this->email) || empty($this->password) || empty($this->telephone) || empty($this->confirm_password)){
 			$this->message = 'Semua data dibutuhkan!.';
 			return $this->message;
 			header('location:register.php');
@@ -40,7 +43,7 @@ abstract class RegisterController extends query{
 			return $this->message;
 			header('location:register.php');
 		}else{
-			$sql = $this->SQLRegister($this->name, $this->email, $this->password);
+			$sql = $this->SQLRegister($this->name, $this->email, $this->password, $this->telephone);
 			$_SESSION['email'] = $row['email'];
 			$_SESSION['password'] = $row['password'];
 			header('location:administrator.php');
