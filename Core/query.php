@@ -31,7 +31,7 @@ abstract class query extends MySQL{
 	}
 
 	public function FetchArray(){
-		//digunakan untuk memasukan data dalam database
+		
 		$row = $this->result->fetch_array();
 		return $row;
 	}
