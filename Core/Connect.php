@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__ . "/Core/ConfigDB.php";
+require __DIR__ . "/ConfigDB.php";
 
 abstract class MySQL
 {
@@ -14,7 +14,7 @@ abstract class MySQL
 		$this->connectDB();
 	}
 
-	function connectDB() {
+    function connectDB() {
 		$this->conn = new mysqli($this->HOSTNAME,$this->USERNAME,$this->PASSWORD,$this->DBNAME,$this->PORT);
 		$this->connectDB;
 	}
@@ -31,6 +31,7 @@ abstract class MySQL
 	abstract public function runQuery($query);
 }
 
+
 class DBController extends MySQL {
 
 	public function runQuery($query) {
@@ -43,4 +44,5 @@ class DBController extends MySQL {
 	}
 
 }
+
 ?>

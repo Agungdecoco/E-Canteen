@@ -1,14 +1,15 @@
 <?php
 
-require __DIR__ . "/Core/MySQL.php";
+require __DIR__ . "/Connect.php";
 
-class query extends MySQL{
+abstract class query extends MySQL{
+	
 
 	protected $sql;
 	protected $result;
 
 	public function SQLLogin($email, $password){
-		// digunakan dalam proses login
+		
 		$this->sql = "SELECT * FROM users WHERE email = '".$email."' AND password = '".md5($password)."'";
 		return $this->getResult();
 	}
@@ -26,7 +27,7 @@ class query extends MySQL{
 	}
 
 	public function getResult(){
-		$this->result = $this->dbConn()->query($this->sql);
+		$this->result = $this->query;
 		return $this;
 	}
 
