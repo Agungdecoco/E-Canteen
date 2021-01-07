@@ -6,9 +6,9 @@
 class About extends Controller
 {
 
-  public function index($nama = 'Agung', $pekerjaan = 'Mahasiswa'){
-    $data['nama'] = $nama;
-    $data['pekerjaan'] = $pekerjaan;
+  public function index($name = 'Agung', $job = 'Mahasiswa'){
+    $data['name'] = $name;
+    $data['job'] = $job;
     $data['title'] = 'About';
     $this->view('templates/header', $data);
     $this->view('about/index', $data);
