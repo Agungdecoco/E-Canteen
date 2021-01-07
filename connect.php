@@ -29,8 +29,7 @@ abstract class MySQL
 	}
 	abstract public function runQuery($query);
 }
-
-class DBController extends MySQL {
+	class DBController extends MySQL {
 
 	public function runQuery($query) {
 		$result = mysqli_query($this->conn,$query);
