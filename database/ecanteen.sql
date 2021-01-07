@@ -1,41 +1,92 @@
--- Create database `ecanteen`
-CREATE DATABASE `ecanteen`;
+-- phpMyAdmin SQL Dump
+-- version 4.9.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Waktu pembuatan: 06 Jan 2021 pada 21.10
+-- Versi server: 10.4.8-MariaDB
+-- Versi PHP: 7.1.32
 
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
 -- Database: `ecanteen`
+--
+CREATE DATABASE `ecanteen`;
+-- --------------------------------------------------------
 
-SET FOREIGN_KEY_CHECKS = 0;
+--
+-- Struktur dari tabel `product`
+--
 
--- Table structure for product
-DROP TABLE IF EXISTS `product`;	
+DROP TABLE IF EXISTS `product`;
 CREATE TABLE `product` (
-  	`idproduct`		INT 			NOT NULL AUTO_INCREMENT PRIMARY KEY,	
-	`product`		VARCHAR(255) 	COLLATE utf8mb4_general_ci NOT NULL,
-	`price`			DECIMAL 		COLLATE utf8mb4_general_ci NOT NULL,
-	`photo`			TEXT			NULL,
-	`idseller`		INT				NOT NULL,
-	INDEX (`idseller`),
-	CONSTRAINT `product_idseller_fk` FOREIGN KEY (`idseller`) REFERENCES `seller` (`idseller`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `id` int(11) NOT NULL PRIMARY KEY,
+  `product` varchar(255) NOT NULL,
+  `price` decimal(10,0) NOT NULL,
+  `photo` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Table structure for account
-DROP TABLE IF EXISTS `users`;	
-CREATE TABLE `users` (
-  	`iduser`			INT 			NOT NULL AUTO_INCREMENT PRIMARY KEY,	
-	`name`			VARCHAR(255) 	COLLATE utf8mb4_general_ci NOT NULL,
-	`email`			VARCHAR(255)	COLLATE utf8mb4_general_ci NOT NULL,
-	`password`		VARCHAR(20) 	COLLATE utf8mb4_general_ci NOT NULL,
-	INDEX (`iduser`),
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+--
+-- Dumping data untuk tabel `product`
+--
 
--- Table structure for seller
-DROP TABLE IF EXISTS `seller`;	
-CREATE TABLE `seller` (
-  	`idseller`		INT 			NOT NULL AUTO_INCREMENT PRIMARY KEY,	
-	`seller`		VARCHAR(255) 	COLLATE utf8mb4_general_ci NOT NULL,
-	`canteen`		VARCHAR(255)	NULL,
-	`email`			VARCHAR(255)	COLLATE utf8mb4_general_ci NOT NULL,
-	INDEX (`iduser`),
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+-- --------------------------------------------------------
 
-SET FOREIGN_KEY_CHECKS = 1;
+--
+-- Struktur dari tabel `user`
+--
 
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE `user` (
+  `id` int(11) NOT NULL PRIMARY KEY,
+  `name` varchar(255) NOT NULL,
+  `phone_number` varchar(13) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `password` varchar(16) NOT NULL,
+  `photo_user` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `user`
+--
+
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indeks untuk tabel `product`
+--
+ALTER TABLE `product`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indeks untuk tabel `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT untuk tabel yang dibuang
+--
+
+--
+-- AUTO_INCREMENT untuk tabel `product`
+--
+
+
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
