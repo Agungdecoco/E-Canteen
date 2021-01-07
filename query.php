@@ -1,8 +1,8 @@
 <?php
 
-require __DIR__ . "/../Core/dbcontroller.php";
+require "Connect.php";
 
-class query extends MySQL{
+class query extends Connect{
 
 	protected $sql;
 	protected $result;

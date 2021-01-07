@@ -1,5 +1,5 @@
 <?php
-class setname{
+class deletename{
 	private $correctid = "aliya01";
 	private $name;
 	protected $id;
@@ -15,7 +15,7 @@ class setname{
 		}
 	}
 
-	public function set(){
+	public function delete(){
 		if($this->validation()){
 			echo "Nama tersedia!";
 		}else{
@@ -26,7 +26,6 @@ class setname{
 
 $id = "aliya01";
 
-$setname = new setname($id);
-$setname->set();
-
+$deletename = new deletename($id);
+$deletename->delete();
 ?>
