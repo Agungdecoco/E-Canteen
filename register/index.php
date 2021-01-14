@@ -2,11 +2,11 @@
 <form class="" action="<?= MAINURL ?>/register/addUser" method="post">
   <ul>
     <li>
-      <label for="name" class="form-label">Nama</label>
+      <label for="name" class="form-label">Name</label>
       <input class="form-control" type="name" name="name" id="name">
     </li>
     <li>
-      <label for="phone_number" class="form-label">No. Telepon</label>
+      <label for="phone_number" class="form-label">Telephone</label>
       <input class="form-control" type="number" name="phone_number" id="phone_number">
     </li>
     <li>
@@ -18,7 +18,7 @@
       <input class="form-control" type="password" name="password" id="password">
     </li>
     <li>
-      <label for="photo_user" class="form-label">Foto</label>
+      <label for="photo_user" class="form-label">Photo</label>
       <input class="form-control" type="file" id="photo_user" name="photo_user">
     </li>
     <!-- <li>
